@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ARRAY OF OBJECT</title>
+    <style>
+    body{
+        margin: 0 auto;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #siswa-rpl1{
+        width: 800px;
+        margin: auto;
+        background-color: aquamarine;
+        border: 1px solid;
+        border-radius: 30px;
+    }
+    #siswa-rpl1 div{
+        padding: 10px;
+    }
+    #siswa-rpl1 div .nama-siswa{
+        display: block;
+        color: blue;
+    }
+    #siswa-rpl1 div .nama-siswa::before{
+        content: "Nama: "
+    }
+    #siswa-rpl1 div .kelas-siswa::before{
+        content: "Kelas: "
+    }
+    #siswa-rpl1 div .kelas-siswa{
+        display: block;
+        color: red;
+    }
+    </style>
+
+    <script>
+    const siswa = [
+    {
+        "nama":"vanyaamany",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"adinda purti,
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"najwa",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"salsyabila",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"fury nashwa",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"gustam rheza",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"achmad zulfikar",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"Rino Satya P",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"Wisman Ndraha",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"Jaki Andhika",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"levina handayani",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"farhah kamilautun",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"jane nur",
+        "kelas":"X-RPL 1"
+    },
+    {
+        "nama":"M rangga",
+        "kelas":"X-RPL 1"
+    },
+];
+
+let x;
+
+for(x in siswa) {
+    let namaSiswa = siswa[x].nama
+    let kelasSiswa =siswa[x].kelas
+    let divider = "<div><span class='nama-siswa'>"+namaSiswa+"</span><span class='kelas-siswa'>"+kelasSiswa+"</div>";
+    document.getElementById('siswa-rpl1').innerHTML += divider
+}
+    </script>
+</head>
+<body>
+    <center><h1>NAX  RPL</h1></center>
+    <div id="siswa-rpl1"></div>
+    <script src="arrayofobject.js"></script>
+</body>
+</html>

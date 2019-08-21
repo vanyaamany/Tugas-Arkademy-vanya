@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Shop</title>
+  <style>
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    width:650px;
+    margin: 0 auto;
+  }
+  .item{
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    min-height: 200px;
+    padding:20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .item .picture{
+    flex:1;
+    height: auto;
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+  }
+  .item .picture .thumb{
+    display: block;
+    width:100%;
+  }
+  .item .text{
+    flex:3;
+    color:rgba(0,0,0,0.8);
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .item .text .name{
+    color:black;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .item .text .price{
+    font-size: 20px;
+    color: rgba(255,0,0,0.8);
+    font-weight: bold;
+  }
+  .item .text .rating{
+    font-weight: bold;
+  }
+  .item .text .rating::before{
+    content:"Quality: "
+  }
+  </style>
+</head>
+<body>
+    <h1><center>BT 21 product</center></h1>
+  <div id="item-list">
+  </div>
+  <script>
+    let data = [
+      {
+        "name":"BT21 Pluch Keyring",
+        "description":"Material ABS, PVC(Body), STEEL(Ring)",
+        "price":390000,
+        "image":[
+          "assets/img/gantungan.jpg",
+          "assets/img/gantungan1.jpg",
+          "assets/img/gantungan2.jpg"
+        ],
+        "rating":[
+          "0","1","21","6","22"
+        ]
+      },
+      {
+        "name":"BT21 Handle Thermos",
+        "description":"Material	Stainless steel, PP, Silicone",
+        "price":500000,
+        "image":[
+          "assets/img/botol.jpg",
+          "assets/img/botol1.jpg",
+          "assets/img/botol2.jpg"
+        ],
+        "rating":[
+          "0","50","1","2","10"
+        ]
+      },
+      {
+        "name":"BT21 Hoodie Neck Cushion",
+        "description":"Material	POLYESTER 100%",
+        "price":490000,
+        "image":[
+          "assets/img/bunny.jpg",
+          "assets/img/bunny1.jpg",
+          "assets/img/bunny2.jpg"
+        ],
+        "rating":[
+          "12","0","0","0","5"
+        ]
+      },
+      {
+        "name":"BT21 Bag Charm Set",
+        "description":"Material	POLYESTER 100%",
+        "price":400000,
+        "image":[
+          "assets/img/tas.jpg",
+          "assets/img/tas1.jpg",
+          "assets/img/tas2.jpg"
+        ],
+        "rating":[
+          "0","0","1","3","8"
+        ]
+      },
+      {
+        "name":"BT21 Winter Heatable Toy",
+        "description":"Material	PE",
+        "price":650000,
+        "image":[
+          "assets/img/boneka.jpg",
+          "assets/img/boneka1.jpg",
+          "assets/img/boneka2.jpg"
+        ],
+        "rating":[
+          "1","2","2","2","31"
+        ]
+      }
+    ];
+    function rating(arr){
+      let current = "";
+      let rating = "";
+      let arrRating = ["Buruk","Cukup","Baik","Sangat Baik","Super"];
+      arr.reverse();
+      arr.forEach((v,i)=>{
+        if(current !=""){
+          if(current > v){
+            rating = arrRating[i]
+          }
+        }
+        current = v;
+      })
+      return rating;
+    }
+    
+    let element = "";
+    data.forEach((v,i)=>{
+      element+='\
+      <div class="item">\
+        <div class="picture">\
+          <img class="thumb" src="'+data[i].image[0]+'"></img>\
+        </div>\
+        <div class="text">\
+          <div class="name">'+data[i].name+'</div>\
+          <div class="price">Rp.'+data[i].price+',-</div>\
+          <div class="description">'+data[i].description+'</div>\
+          <div class="rating">'+rating(data[i].rating)+'</div>\
+        </div>\
+      </div>\
+      ';
+    });
+    document.getElementById('item-list').innerHTML = element;
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hasil"></div>
+    <script>
+        class outputHasil{
+            getData = async ()=>{
+                await setTimeout(()=>{
+                    return{
+                        'nama':'vanyaamany',
+                        'kelas':'XI-RPL1'
+                    }
+                },5000)
+                return await obj
+            }
+            setData= async (data,hasil)=>{
+                document.getElementById(hasil).innerHTML= await data
+            }
+        }
+            const OH =new outputHasil()
+           const output = async ()=>{
+               const data =await OH.getData()
+                await OH.setData(data,'hasil')
+           }
+
+           output()
+
+        
+
+
+        //const data= new promise(function(resolve,reject){
+            //setTimeout(function(){
+               // resolve ('RPL')
+           // },5000)
+        //});
+
+       // data.then(function(hasil){
+           // document.getElementById('hasil').innerHTML = hasil
+       // }).catch(()=>{
+           // alert('maaf ada kesalahan')
+       // })
+       
+       //asynchronous ES6
+       const data = async()=>{
+           await setTimeout(function() {
+               document.getElementById('hasil').innerHTML='rpl'
+           },5000)
+       }
+       
+       try{
+           data()
+        }catch(e){
+            console.log(e)
+        }
+        </script>
+</body>
+</html>

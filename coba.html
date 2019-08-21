@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.calc{
+    width: 300px;
+    height: 400px;
+    background: palegreen;
+    padding: 10PX;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+
+}
+
+.title{
+    flex: 1;
+    text-align: center;
+}
+.close, .minimize, .maximize, .menu{
+padding: 5px;
+height: 20px;
+width: 20px;
+text-align: center;
+margin-left: 3px;
+margin-right: 3px;
+background: black;
+color: white;
+}
+
+.display{
+    background: white;
+    height: 50px;
+    margin: 5px;
+    font-size: 30px;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    background: palevioletred;
+}
+.wrapper{
+    display: block;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.square{
+    flex: 1;
+    text-align: center;
+    margin: 3px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 3px;
+    background: aqua;
+}
+
+.square:hover{
+    cursor: pointer;
+}
+</style>
+<body>
+    <div class="calc">
+        <div class="nav">
+            <div class="close">X</div>
+            <div class="minimize">-</div>
+            <div class="maximize">O</div>
+            <div class="title">BASIC MODE</div>
+            <div class="menu">M</div>
+        </div>
+        <div class="display" id="hasil"></div>
+        <div class="input">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="square"onclick="calculator.tombol(7)">7</div>
+                    <div class="square"onclick="calculator.tombol(8)">8</div>
+                    <div class="square"onclick="calculator.tombol(9)">9</div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="row">
+                    <div class="square"onclick="calculator.tombol(4)">4</div>
+                    <div class="square"onclick="calculator.tombol(5)">5</div>
+                    <div class="square"onclick="calculator.tombol(6)">6</div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="row">
+                    <div class="square" onclick="calculator.tombol(1)">1</div>
+                    <div class="square"onclick="calculator.tombol(2)">2</div>
+                    <div class="square"onclick="calculator.tombol(3)">3</div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="row">
+                    <div class="square" onclick="calculator.tombol('0')">0</div>
+                   <div class="square" onclick="calculator.tombol('/')">/</div>
+                   <div class="square"onclick="calculator.hapus('')">C</div>
+               </div>
+            </div>
+            <div class="wrapper">
+                    <div class="row">
+                        <div class="square" onclick="calculator.tombol('+')">+</div>
+                       <div class="square"onclick="calculator.tombol('-')">-</div>
+                       <div class="square"onclick="calculator.tombol('*')">x</div>
+                   </div>
+                </div>
+                <div class="wrapper">
+                        <div class="row">
+                            <div class="square" onclick="calculator.hitung(=)">=</div>
+                       </div>
+                    </div>
+        </div>
+    </div>
+
+    <script>
+        class kalkulator{
+            tombol(nama){
+                document.getElementById('hasil').innerHTML += nama.toString() 
+            }
+        
+
+            hitung(){
+                const display =Document.getElementById('hasil')
+                const hasil = eval(display.innerHTML)
+                display.innerHTML=hasil
+                
+            }
+            hapus(){
+                document.getElementById('hasil').innerHTML=''
+            }
+        }
+        const calculator =new kalkulator()
+
+
+    </script>
+</body>
+</html>

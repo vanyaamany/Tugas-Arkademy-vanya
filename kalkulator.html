@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .hitung{
+    width: 330px;
+	margin: 30px auto;
+	padding: 10px 20px 50px 20px;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px 0px #D1D1D1;
+}
+
+h1{
+    border: 1px solid gray;
+    background: palegreen;
+    width: 40%;
+}
+.tambah{
+    width: 300px;
+	margin: 5px;
+	border: none;
+	font-size: 16pt;
+	border-radius: 5px;
+    padding: 10px;
+}
+
+button:hover {
+    background: orange;
+}
+    </style>
+</head>
+<body>
+    <center><h1 class="kalku">Kalkulator Sederhana</h1></center>
+    <div class="hitung">
+    <div class="pertambahan">
+        <h3>Pertambahan</h3>
+        <input id="bil1" class="tambah" placeholder=" Bilangan Pertama"/><br/>
+        <input id="bil2" class="tambah" placeholder=" Bilangan Kedua"/><br/>
+        <p id="pertambahan"></p>
+        <button class="tambah" onclick="pertambahan()">HASIL</button>
+        <hr align="right">
+    </div>
+    
+    <div class="perkalian">
+        <h3>Perkalian</h3>
+        <input id="bil3" class="tambah" placeholder=" Bilangan Pertama"/><br/>
+        <input id="bil4" class="tambah" placeholder=" Bilangan Kedua"/><br/>
+        <p id="perkalian"></p>
+        <button class="tambah" onclick="perkalian()">HASIL</button>
+        <hr align="right">
+    </div>
+    
+    <div class="pembagian"> 
+        <h3>Pembagian</h3>
+        <input id="bil5" class="tambah" placeholder=" Bilangan Pertama"/><br/>
+        <input id="bil6" class="tambah" placeholder=" Bilangan Kedua"/><br/>
+        <p id="pembagian"></p>
+        <button class="tambah" onclick="pembagian()">HASIL</button>
+        <hr align="right">
+    </div>
+    </div>
+    
+
+    <script>
+        function pertambahan() {
+            var angka1 = parseInt (document.getElementById("bil1").value)
+            var angka2 = parseInt (document.getElementById("bil2").value)
+            var hasilpertambahan = angka1 + angka2;
+            document.getElementById('pertambahan').innerHTML = hasilpertambahan;
+        }
+        function perkalian() {
+            var angka1 = parseInt (document.getElementById("bil3").value)
+            var angka2 = parseInt (document.getElementById("bil4").value)
+            var hasilperkalian = angka1 * angka2;
+            document.getElementById('perkalian').innerHTML = hasilperkalian;
+        }   
+        function pembagian() {
+            var angka1 = parseInt (document.getElementById("bil5").value)
+            var angka2 = parseInt (document.getElementById("bil6").value)
+            var hasilpembagian = angka1 / angka2;
+            document.getElementById('pembagian').innerHTML = hasilpembagian;
+        }
+    </script>
+    </body>
+</html>

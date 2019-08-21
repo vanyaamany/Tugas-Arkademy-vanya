@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toko Online HP</title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        h1{
+            border-radius: 20px;
+            color: black;
+            margin: 30px;
+            background-color: aquamarine;
+            padding: 7px;
+            border-radius: 50px green;
+            color: black;
+            animation-name: gantiwrana;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes gantiwarna{
+            0% {background-color: red; left: 0px; top: 0px;}
+            25% {background-color: yellow; left: 200px; top: 0px;}
+            50% {background-color: blue; left: 200px; top: 200px;}
+            75% {background-color: green; left: 0px; top: 200px;}
+            100% {background-color: red; left: 0px; top: 0px;}
+        }
+        .nameItem{
+            color: cyan;
+        }
+        #item-list{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20PX;
+            flex-flow: row wrap;
+        }
+        #item:hover{
+            background: palevioletred;
+        }
+
+        .item{
+            flex: 1;
+            background: greenyellow;
+            margin: 30px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .item .gambar img{
+            width: 150px;
+            margin: 5px;
+        }
+
+        .pemisah{
+
+        }
+    </style>
+</head>
+<body>
+    <center><h1>DAFTAR HARGA ALBUM</h1></center>
+     <div id="item-list"></div>
+    <script>
+        let item = [
+    {
+        "merek":"TXT Album - The Dream Chapter : Star Album + ",
+        "gambar":"asset/img/txt.jpg.jpg",
+        "by":"TXT",
+        "harga":"$26.88"
+    },
+    {
+        "merek":"EXO The 5th Album 'DON'T MESS UP MY TEMPO' Allegro Ver.",
+        "gambar":"asset/img/exo.jpg.jpg",
+        "by":"EXO",
+        "harga":"$18.95"
+    },
+    {
+        "merek":"Map Of The Soul: PERSONA",
+        "gambar":"asset/img/bts.jpg.jpg",
+        "by":"BTS",
+        "harga":"$18.45"
+    },
+    {
+        "merek":"YG Blackpink - Kill This Love [Pink ver.]",
+        "gambar":"asset/img/images.jpg.jpg",
+        "by":"BLACKPINK",
+        "harga":"$23.99  "
+    },
+    {
+        "merek":"IKON - [Return]2nd Album Black Ver ",
+        "gambar":"asset/img/ikon.jpg.jpg",
+        "by":"IKON",
+        "harga":" $28.99"
+    },
+    {
+        "merek":"Super Junior - [Replay] 8th Repackage Album Normal Ver ",
+        "gambar":"asset/img/super junior.jpg.jpg",
+        "by":"SUPER JUNIOR",
+        "harga":"  $23.99"
+    },
+    {
+        "merek":"The 4th Mini Album 'NCT #127 WE ARE SUPERHUMAN' ",
+        "gambar":"asset/img/nct.jpg.jpg",
+        "by":"NCT",
+        "harga":" $16.53"
+    },
+   
+    {
+        "merek":"Stone Music Entertainment Wanna ONE - 1¹¹=1 Power of Destiny [Adventure+Romance ver. Set]",
+        "gambar":"asset/img/wannaone.jpg.jpg",
+        "by":"WANNAONE",
+        "harga":"$49.95"
+    },
+  
+    {
+        "merek":"Pentagon - [Positive] 6th Mini Album",
+        "gambar":"asset/img/pentagon.jpg.jpg",
+        "by":"PENTAGON",
+        "harga":" $21.50"
+    },
+   
+];
+for(x in item){
+    var merekItem = item[x].merek;
+    let gambarItem = item[x].gambar;
+    let byItem = item[x].by;
+    let hargaItem = item[x].harga;
+
+    document.getElementById('item-list').innerHTML +="\
+    <div class='item'>\
+    <div class='gambar'><img src='"+gambarItem+"' alt=''/></div>\
+    <div>"+merekItem+"</div>\
+    <div>"+byItem+"</div>\
+    <div>"+hargaItem+"</div>\
+</div>\
+";
+if(((x+1)/5)===0) {
+    document.getElementById('item-list').innerHTML +="\
+    <div class='pemisah'></div>\
+    ";
+    }
+}
+    </script>
+</body>
+</html>
+
+
+
